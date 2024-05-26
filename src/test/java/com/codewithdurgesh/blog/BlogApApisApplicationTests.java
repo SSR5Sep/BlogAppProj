@@ -1,0 +1,47 @@
+package com.codewithdurgesh.blog;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.codewithdurgesh.blog.repositories.UserRepo;
+import com.codewithdurgesh.blog.services.UserService;
+
+@SpringBootTest
+class BlogApApisApplicationTests {
+	
+	@Autowired
+	private UserService userService;
+	
+	@Test
+	void contextLoads() {
+	}
+	
+	@Test
+	public void userTest()
+	{
+		String className = this.userService.getClass().getName();
+		String packName = this.userService.getClass().getPackageName();
+		System.out.println(className);
+		System.out.println(packName);
+	}
+	
+}
+	
+	/*@Autowired
+	private UserRepo userRepo;
+
+	@Test
+	void contextLoads() {
+	}
+	
+	@Test
+	public void repoTest()
+	{
+		String className = this.userRepo.getClass().getName();
+		String packName = this.userRepo.getClass().getPackageName();
+		System.out.println(className);
+		System.out.println(packName);
+	}
+
+}*/
