@@ -54,6 +54,7 @@ public class User implements UserDetails {
 	@JoinTable(name="user-role",
 	joinColumns=@JoinColumn(name="user",referencedColumnName="id"),
 	inverseJoinColumns = @JoinColumn(name="role",referencedColumnName = "id"))
+	
 	private Set<Role> roles=new HashSet();
 
 	@Override

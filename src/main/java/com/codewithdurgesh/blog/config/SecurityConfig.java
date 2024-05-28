@@ -86,8 +86,7 @@ public class SecurityConfig  {
 
 	        http.addFilterAfter(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 	        http.authenticationProvider(daoAuthenticationProvider());
-	        
-	        
+	     
 	      
 	        return http.build();
 	}

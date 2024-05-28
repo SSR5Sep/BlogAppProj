@@ -41,8 +41,18 @@ public class GlobalExceptionHandler extends RuntimeException {
 		
 		return new ResponseEntity<Map<String,String>>(res,HttpStatus.BAD_REQUEST);
 		
-		
 		}
+	
+	@ExceptionHandler(ApiException.class)
+	public ResponseEntity<ApiResponse> ApiExceptionHandler(ApiException ex){
+	String status = ex.getMessage();
+	
+	ApiResponse apiResponse = new ApiResponse(status, true);
+	return new ResponseEntity<ApiResponse>(apiResponse, HttpStatus.BAD_REQUEST);
+	}
+	
+	
+	
 	}
 	
 
